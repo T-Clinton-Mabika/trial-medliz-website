@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Golos+Text:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@variant dark (&:where(.dark, .dark *));
+
+/**
+ * Custom Tailwind Theme Configuration.
+ * Defines brand colors, typography, and utility variants.
+ */
+@theme {
+  --font-sans: "Golos Text", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "DM Sans", sans-serif;
+  
+  --color-medical-primary: #0ea5e9;
+  --color-medical-secondary: #0369a1;
+  --color-medical-accent: #f43f5e;
+
+  --color-courses-primary: #F97316;
+  --color-courses-hover: #D66313;
+  --color-blog-primary: #7C3AED;
+  --color-blog-hover: #602DB8;
+  --color-default-primary: #0EA5E9;
+  --color-default-hover: #0C89C2;
+}
+
+/**
+ * Base Styles and Global Overrides.
+ */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+/**
+ * Custom Utility Classes.
+ * - .glass-header: Semi-transparent blurred header.
+ * - .card-hover: Smooth lift and shadow effect for cards.
+ * - .markdown-body: Styles for rendered markdown content.
+ */
+.glass-header {
+  @apply sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-zinc-900/70 border-b border-zinc-200/50 dark:border-zinc-800/50;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer;
+}
+
+.markdown-body {
+  @apply prose prose-zinc dark:prose-invert max-w-none;
+}
+
+.markdown-body h1 { @apply text-3xl mb-6; }
+.markdown-body h2 { @apply text-2xl mt-8 mb-4; }
+.markdown-body p { @apply mb-4 leading-relaxed; }
