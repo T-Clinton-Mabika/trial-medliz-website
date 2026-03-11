@@ -44,7 +44,7 @@ const AppContent = () => {
 export default function App() {
   return (
     <DarkModeProvider>
-      <Router basename="/trial-medliz-website">
+      <Router>
         <AppContent />
       </Router>
     </DarkModeProvider>
