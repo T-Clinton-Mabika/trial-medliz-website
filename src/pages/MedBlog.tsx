@@ -49,7 +49,7 @@ export const MedBlog: React.FC = () => {
     <div className="pb-24">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mb-16">
-        <div className="relative bg-[url('/assets/images/Mobile%20Hero%20Image%20-%20Blog.png')] bg-cover bg-bottom rounded-[2.5rem] overflow-hidden min-h-[400px] flex flex-col lg:flex-row items-center lg:items-end">
+        <div className="relative bg-[url('assets/images/Mobile%20Hero%20Image%20-%20Blog.png')] bg-cover bg-bottom rounded-[2.5rem] overflow-hidden min-h-[400px] flex flex-col lg:flex-row items-center lg:items-end">
           {/* Overlay to ensure text readability */}
           <div className="absolute inset-0 bg-blog-primary/40 z-0"></div>
           {/* Text Content */}
@@ -70,7 +70,7 @@ export const MedBlog: React.FC = () => {
           {/* Image Content */}
           <div className="flex-1 w-full lg:w-1/2 h-[250px] md:h-[350px] lg:h-full relative self-end">
             <img
-              src="/assets/images/Med-Blog Hero Image.png"
+              src="assets/images/Med-Blog Hero Image.png"
               alt="Blog Hero"
               className="w-full h-full object-contain object-bottom"
               referrerPolicy="no-referrer"

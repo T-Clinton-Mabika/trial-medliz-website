@@ -44,7 +44,7 @@ export const Home: React.FC = () => {
     <div className="space-y-24 pb-24">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <div className="relative bg-[url('/assets/images/Mobile%20Hero%20Image%20-%20Home.png')] bg-cover bg-bottom rounded-[2.5rem] overflow-hidden min-h-[500px] flex flex-col lg:flex-row items-center lg:items-end">
+        <div className="relative bg-[url('assets/images/Mobile%20Hero%20Image%20-%20Home.png')] bg-cover bg-bottom rounded-[2.5rem] overflow-hidden min-h-[500px] flex flex-col lg:flex-row items-center lg:items-end">
           {/* Overlay to ensure text readability if needed */}
           <div className="absolute inset-0 bg-default-primary/40 z-0"></div>
           {/* Text Content */}
@@ -83,7 +83,7 @@ export const Home: React.FC = () => {
           {/* Image Content */}
           <div className="flex-1 w-full lg:w-1/2 h-[300px] md:h-[450px] lg:h-full relative self-end">
             <img
-              src="/assets/images/Home Hero Image.png"
+              src="assets/images/Home Hero Image.png"
               alt="Medical Hero"
               className="w-full h-full object-contain object-bottom"
               referrerPolicy="no-referrer"
