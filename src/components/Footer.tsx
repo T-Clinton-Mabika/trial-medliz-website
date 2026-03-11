@@ -14,12 +14,12 @@ export const Footer: React.FC = () => {
   const getBackgroundImage = () => {
     const path = location.pathname;
     if (path.startsWith('/blog')) {
-      return 'assets/images/Footer Background - Blog.png';
+      return '/assets/images/Footer Background - Blog.png';
     }
     if (path.startsWith('/education')) {
-      return 'assets/images/Footer Background - Education.png';
+      return '/assets/images/Footer Background - Education.png';
     }
-    return 'assets/images/Footer Background - Home.png';
+    return '/assets/images/Footer Background - Home.png';
   };
 
   return (
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
           <div className="col-span-2">
             <Link to="/" className="flex items-center group mb-6 h-24">
               <img 
-                src={isDark ? "assets/svg/dark mode - vertical - medliz - name version.svg" : "assets/svg/light mode - vertical - medliz - name version.svg"} 
+                src={isDark ? "/assets/svg/dark mode - vertical - medliz - name version.svg" : "/assets/svg/light mode - vertical - medliz - name version.svg"} 
                 alt="Medliz Logo" 
                 className="h-full w-auto object-contain"
                 referrerPolicy="no-referrer"

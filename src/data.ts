@@ -74,14 +74,14 @@ export const CONTRIBUTORS: Contributor[] = [
 export const EMERGENCY_CONTACTS: EmergencyContact[] = [
   {
     country: 'United States',
-    flagIcon: 'assets/svg/united-states-flag-icon.svg',
+    flagIcon: '/assets/svg/united-states-flag-icon.svg',
     services: [
       { name: 'Emergency (All)', number: '911' }
     ]
   },
   {
     country: 'United Kingdom',
-    flagIcon: 'assets/svg/united-kingdom-flag-icon.svg',
+    flagIcon: '/assets/svg/united-kingdom-flag-icon.svg',
     services: [
       { name: 'Emergency (All)', number: '999' },
       { name: 'Non-Emergency Medical', number: '111' }
@@ -89,7 +89,7 @@ export const EMERGENCY_CONTACTS: EmergencyContact[] = [
   },
   {
     country: 'South Africa',
-    flagIcon: 'assets/svg/south-africa-flag-icon.svg',
+    flagIcon: '/assets/svg/south-africa-flag-icon.svg',
     services: [
       { name: 'Police', number: '10111' },
       { name: 'Ambulance', number: '10177' },
@@ -140,7 +140,7 @@ export const MOCK_POSTS: Post[] = [
       rating: 4.8,
       readingTime: 8,
     },
-    contentPath: 'content/articles/immunology.md',
+    contentPath: '/content/articles/immunology.md',
     image: 'https://picsum.photos/seed/med1/800/400'
   },
   {
@@ -155,7 +155,7 @@ export const MOCK_POSTS: Post[] = [
       rating: 4.5,
       readingTime: 5,
     },
-    contentPath: 'content/articles/telemedicine.md',
+    contentPath: '/content/articles/telemedicine.md',
     image: 'https://picsum.photos/seed/med2/800/400'
   },
   {
@@ -170,7 +170,7 @@ export const MOCK_POSTS: Post[] = [
       rating: 4.9,
       readingTime: 6,
     },
-    contentPath: 'content/articles/cardiology.md',
+    contentPath: '/content/articles/cardiology.md',
     image: 'https://picsum.photos/seed/med3/800/400'
   }
 ];
@@ -200,7 +200,7 @@ export const MOCK_COURSES: Course[] = [
       {
         id: 'm1',
         title: 'Introduction to Patient Care',
-        contentPath: 'content/courses/clinical-basics.md',
+        contentPath: '/content/courses/clinical-basics.md',
         quiz: {
           questions: [
             {
@@ -245,7 +245,7 @@ export const MOCK_COURSES: Course[] = [
       {
         id: 'm1',
         title: 'Triage Protocols',
-        contentPath: 'content/courses/triage-protocols.md',
+        contentPath: '/content/courses/triage-protocols.md',
         quiz: {
           questions: [
             { id: 'q1', text: 'What does the Red category in triage signify?', options: ['Minor injury', 'Life-threatening', 'Deceased', 'Delayed care'], correctIndex: 1 },
@@ -283,7 +283,7 @@ export const MOCK_COURSES: Course[] = [
       {
         id: 'm1',
         title: 'Growth Milestones',
-        contentPath: 'content/courses/pediatric-nutrition.md',
+        contentPath: '/content/courses/pediatric-nutrition.md',
       }
     ]
   }

@@ -65,7 +65,7 @@ export const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center group h-12">
             <img 
-              src={isDark ? "assets/svg/dark mode - landscape - medliz - name version.svg" : "assets/svg/light mode - landscape - medliz - name version.svg"} 
+              src={isDark ? "/assets/svg/dark mode - landscape - medliz - name version.svg" : "/assets/svg/light mode - landscape - medliz - name version.svg"} 
               alt="Medliz Logo" 
               className="h-full w-auto object-contain"
               referrerPolicy="no-referrer"
