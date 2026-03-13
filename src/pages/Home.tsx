@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollCounter } from '../hooks';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowRight, BookOpen, Users, Award, ShieldCheck, Clock, Star } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, Award, ShieldCheck, Stethoscope, GraduationCap, BookOpenText, MessageSquareHeart  } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { MOCK_POSTS, MOCK_COURSES } from '../data';
 import { useReadingTime } from '../hooks';
@@ -13,15 +13,32 @@ import { BlogCard, CourseCard } from '../components/Cards';
  * Animated counter component for displaying statistics.
  * Uses the useScrollCounter hook to animate from 0 to the target value.
  */
-const StatCounter = ({ value, label, suffix = "" }: { value: number, label: string, suffix?: string }) => {
+const StatCounter = ({ value, label, suffix = "", icon: Icon }: { value: number, label: string, suffix?: string, icon?: React.ElementType }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const count = useScrollCounter(isInView ? value : 0);
 
   return (
-    <div ref={ref} className="text-center p-6 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-800">
+    <div ref={ref} className="text-center p-6 bg-app-surface rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-800">
+      {Icon && <Icon className="mx-auto mb-2 text-medical-primary" size={28} />}
       <div className="text-4xl font-display font-bold text-medical-primary mb-2">
         {count}{suffix}
+      </div>
+      <div className="text-zinc-500 dark:text-zinc-400 font-medium">{label}</div>
+    </div>
+  );
+};
+
+const TextStat = ({ value, label, suffix = "", icon: Icon}: { value?: string, label: string, suffix?: string, icon?: React.ElementType }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  //const count = useScrollCounter(isInView ? value : 0);
+
+  return (
+    <div ref={ref} className="text-center p-6 bg-app-surface rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-800">
+      {Icon && <Icon className="mx-auto mb-2 text-medical-primary" size={28} />}
+      <div className="text-4xl font-display font-bold text-medical-primary mb-2">
+        {value}{suffix}
       </div>
       <div className="text-zinc-500 dark:text-zinc-400 font-medium">{label}</div>
     </div>
@@ -95,10 +112,10 @@ export const Home: React.FC = () => {
       {/* Stats Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          <StatCounter value={100} label="Active Learners" suffix="K+" />
-          <StatCounter value={500} label="Expert Courses" suffix="+" />
-          <StatCounter value={95} label="Completion Rate" suffix="%" />
-          <StatCounter value={4.9} label="Average Rating" />
+          <StatCounter icon={GraduationCap} value={9} label="Live Course Modules" suffix="+" />
+          <StatCounter icon={BookOpenText} value={3} label="Live Course Modules" suffix="+" />
+          <TextStat icon={Stethoscope} label="All content reviewed by active experts" />
+          <TextStat icon={MessageSquareHeart} label="User Feedback applied content" />
         </div>
       </section>
 
