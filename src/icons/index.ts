@@ -9,3 +9,4 @@ export * from "./contactIcons";
 export * from "./controlIcons";
 export * from "./metaIcons";
 export * from "./sectionIcons";
+export * from "./feedbackIcons";

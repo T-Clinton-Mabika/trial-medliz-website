@@ -11,7 +11,7 @@
   --color-effect-glow-brand: #00ccff;
   --color-effect-glow-courses: #22ff00;
   --color-effect-glow-blog: #b026ff;
-  --color-effect-glow-patrons: #ffd000;
+  --color-effect-glow-patrons: #5fa8c7;
   --color-effect-glow-default: #7c3aed;
 
   /*
@@ -21,11 +21,20 @@
   * - They used for elements like disclaimers and policies.
   * - The colours remain consistent regardless of theme/mode change. 
   */
-  --color-auxiliary-red: #f40009;
-  --color-auxiliary-purple: #9b96f4;
-  --color-auxiliary-green: #008000;
+  --color-auxiliary-red-tint: #fee6e6;
+  --color-auxiliary-red-neutral: #f40009;
+  --color-auxiliary-red-shade: #180001;
+  --color-auxiliary-purple-tint: #aca8f5;
+  --color-auxiliary-purple-neutral: #9b96f4;
+  --color-auxiliary-purple-shade: #060080;
+  --color-auxiliary-green-tint: #e0fbe2;
+  --color-auxiliary-green-neutral: #02ff03;
+  --color-auxiliary-green-shade: #004200;
+  --color-auxiliary-blue-tint: #caefeb;
+  --color-auxiliary-blue-neutral: #40b5ad;
+  --color-auxiliary-blue-shade: #0c302b;
   --color-auxiliary-orange: #e67e22;
-  --color-auxiliary-blue: #40b5ad;
+  --color-auxiliary-yellow: #fdc700;
   --color-auxiliary-white: #d9f7ff;
   --color-auxiliary-black: #00141a;
   --color-auxiliary-grey-one: #4b4d4d;
@@ -65,7 +74,7 @@
     --color-general: #22525e;
     --color-courses: #2a5e22;
     --color-blog: #350b40;
-    --color-patrons: #cca600;
+    --color-patrons: ##dce6ec;
 
     --bg-background: #f8f9fa;
     --bg-foreground: #ebf3f5;

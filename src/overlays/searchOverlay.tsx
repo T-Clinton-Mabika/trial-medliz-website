@@ -1,5 +1,5 @@
 /*
- * =========================== SEARCH OVERLAY UTILITY ===========================
+ * =========================== SEARCH OVERLAY ===========================
  * - Scroll to top function to reset page position to top of page as user navigates from page to page
  */
 
@@ -91,27 +91,33 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
     switch (type) {
       case "article":
         return {
-          typeBackground: isDark
-            ? "bg-site-auxiliary-purple/80"
-            : "bg-site-auxiliary-purple/20",
-          typeText: "text-site-blog",
-          typeBorder: "border-site-blog",
+          typeText: isDark
+            ? "bg-site-auxiliary-purple-shade"
+            : "bg-site-auxiliary-purple-tint",
+          typeBackground: "text-site-blog",
+          typeBorder: isDark
+            ? "border-site-auxiliary-purple-tint"
+            : "border-site-auxiliary-purple-shade",
         };
       case "course":
         return {
-          typeBackground: isDark
-            ? "bg-site-auxiliary-green/80"
-            : "bg-site-auxiliary-green/20",
-          typeText: "text-site-courses",
-          typeBorder: "border-site-courses",
+          typeText: isDark
+            ? "bg-site-auxiliary-green-shade"
+            : "bg-site-auxiliary-green-tint",
+          typeBackground: "text-site-courses",
+          typeBorder: isDark
+            ? "border-site-auxiliary-green-tint"
+            : "border-site-auxiliary-green-shade",
         };
       default:
         return {
-          typeBackground: isDark
-            ? "bg-site-auxiliary-blue/80"
-            : "bg-site-auxiliary-blue/20",
-          typeText: "text-site-general",
-          typeBorder: "border-site-general",
+          typeText: isDark
+            ? "bg-site-auxiliary-blue-shade"
+            : "bg-site-auxiliary-blue-tint",
+          typeBackground: "text-site-general",
+          typeBorder: isDark
+            ? "border-site-auxiliary-blue-tint"
+            : "border-site-auxiliary-blue-shade",
         };
     }
   };
@@ -148,7 +154,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
                 className="p-2 rounded-full hover:bg-site-auxiliary-white dark:hover:bg-site-auxiliary-black transition-colors glow-border"
                 style={
                   {
-                    "--glow-color": "var(--color-auxiliary-red)",
+                    "--glow-color": "var(--color-auxiliary-red-neutral)",
                   } as React.CSSProperties
                 }
               >

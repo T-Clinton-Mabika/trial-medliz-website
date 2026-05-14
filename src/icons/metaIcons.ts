@@ -7,13 +7,11 @@
 import { GiTeacher } from "react-icons/gi";
 import { BsClockFill, BsTranslate } from "react-icons/bs";
 import { IoCalendarClear } from "react-icons/io5";
-import { FaRegStarHalfStroke, FaRegStar, FaStar } from "react-icons/fa6";
+import { FaRegStar } from "react-icons/fa6";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
 
 export const metaIcons = {
-  clearStar: FaRegStar,
-  halfStar: FaRegStarHalfStroke,
-  fullStar: FaStar,
+  star: FaRegStar,
   calendar: IoCalendarClear,
   language: BsTranslate,
   clock: BsClockFill,
