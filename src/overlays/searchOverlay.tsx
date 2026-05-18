@@ -22,7 +22,10 @@ interface SearchOverlayProps {
   onClose: () => void;
 }
 
-const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
+export const SearchOverlay: React.FC<SearchOverlayProps> = ({
+  isOpen,
+  onClose,
+}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const { isDark } = useDarkMode();
 
@@ -60,7 +63,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
             );
           }).map((ae) => ({
             title: ae.articleInformation.contentTitle,
-            link: `/med-blog/${ae.articleInformation.contentSlug}`,
+            link: `/blog/${ae.articleInformation.contentSlug}`,
             type: "article",
           })),
 
@@ -76,7 +79,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
             );
           }).map((cs) => ({
             title: cs.courseInformation.contentTitle,
-            link: `/med-courses/${cs.courseInformation.contentSlug}`,
+            link: `/courses/${cs.courseInformation.contentSlug}`,
             type: "course",
           })),
         ]
@@ -206,5 +209,3 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
     </AnimatePresence>
   );
 };
-
-export default SearchOverlay;
