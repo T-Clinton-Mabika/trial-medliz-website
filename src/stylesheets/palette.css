@@ -48,10 +48,15 @@
   */
   --color-site-background: var(--bg-background);
   --color-site-foreground: var(--bg-foreground);
+  --color-site-inverseForeground: var(--bg-inverse-foreground);
   --color-site-hoverElement: var(--bg-hoverElement);
-  --color-site-mainText: var(--text-mainText);
-  --color-site-mutedText: var(--text-mutedText);
+  --color-site-baseElementColor: var(--text-baseElementColor);
+  --color-site-inverseBaseElementColor: var(--text-inverseBaseElementColor);
+  --color-site-mutedElementColor: var(--text-mutedElementColor);
+  --color-site-inverseMutedElementColor: var(--text-inverseMutedElementColor);
   --color-site-borderOutline: var(--border-borderOutline);
+  --color-site-inverseBorderOutline: var(--border-inverseBorderOutline);
+  --gradient-site-background-general: var(--gradient-background-general);
 
   --color-site-general: var(--color-general);
   --color-site-courses: var(--color-courses);
@@ -78,10 +83,16 @@
 
     --bg-background: #f8f9fa;
     --bg-foreground: #ebf3f5;
+    --bg-inverse-foreground: #071012;
     --bg-hoverElement: #c4cacc;
-    --text-mainText: #000a0d;
-    --text-mutedText: #2b2d2d;
+    --text-baseElementColor: #000a0d;
+    --text-inverseBaseElementColor: #f8f9fa;
+    --text-mutedElementColor: #2b2d2d;
+    --text-inverseMutedElementColor: #c4cacc;
     --border-borderOutline: #928f9f;
+    --border-inverseBorderOutline: #4c6061;
+
+    --gradient-background-general: linear-gradient(135deg, var(--bg-foreground), var(--color-auxiliary-white));
   }
 
   .dark {
@@ -101,14 +112,20 @@
 
     --bg-background: #000a0d;
     --bg-foreground: #071012;
+    --bg-inverse-foreground: #ebf3f5;
     --bg-hoverElement: #2b2d2d;
-    --text-mainText: #f8f9fa;
-    --text-mutedText: #c4cacc;
+    --text-baseElementColor: #f8f9fa;
+    --text-inverseBaseElementColor: #000a0d;
+    --text-mutedElementColor: #c4cacc;
+    --text-inverseMutedElementColor: #2b2d2d;
     --border-borderOutline: #4c6061;
+    --border-inverseBorderOutline: #928f9f;
+
+    --gradient-background-general: linear-gradient(135deg, var(--bg-foreground), var(--color-auxiliary-black));
   }
 
   body {
     background-color: var(--bg-background);
-    color: var(--text-mainText);
+    color: var(--text-baseElementColor);
   }
 }

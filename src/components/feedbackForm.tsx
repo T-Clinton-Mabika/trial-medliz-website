@@ -171,7 +171,7 @@ export const FeedbackForm: React.FC<FeedbackFormProps> = ({
                 <feedbackIcons.sent size={32} className="fill-current" />
               </div>
               <h4 className="text-xl font-display font-bold">Thank You!</h4>
-              <p className="text-site-mutedText">
+              <p className="text-site-mutedElementColor">
                 Your{" "}
                 {type === "generalContact"
                   ? "enquiry/message"
@@ -200,7 +200,7 @@ export const FeedbackForm: React.FC<FeedbackFormProps> = ({
               )}
 
               <div>
-                <label className="block text-sm font-medium text-site-mutedText mb-1">
+                <label className="block text-sm font-medium text-site-mutedElementColor mb-1">
                   Your Name:
                 </label>
                 <input
@@ -216,7 +216,7 @@ export const FeedbackForm: React.FC<FeedbackFormProps> = ({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-site-mutedText mb-1">
+                <label className="block text-sm font-medium text-site-mutedElementColor mb-1">
                   Email Address:
                 </label>
                 <input
@@ -244,7 +244,7 @@ export const FeedbackForm: React.FC<FeedbackFormProps> = ({
               <div>
                 {type !== "generalContact" && (
                   <div>
-                    <label className="block text-sm font-medium text-site-mutedText mb-2">
+                    <label className="block text-sm font-medium text-site-mutedElementColor mb-2">
                       Rating:
                     </label>
                     <div className="flex gap-2">
@@ -273,7 +273,7 @@ export const FeedbackForm: React.FC<FeedbackFormProps> = ({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-site-mutedText mb-1">
+                <label className="block text-sm font-medium text-site-mutedElementColor mb-1">
                   {type === "generalContact"
                     ? "Enquiry/Message"
                     : "Comment/Feedback"}

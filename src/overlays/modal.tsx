@@ -40,7 +40,7 @@ export const Modal: React.FC<ModalProps> = ({
             className="relative w-full max-w-2xl bg-site-foreground rounded-2xl shadow-2xl overflow-hidden"
           >
             <div className="flex items-center justify-between p-6 border-b border-site-borderOutline">
-              <h3 className="text-xl font-display font-bold text-site-mainText">
+              <h3 className="text-xl font-display font-bold text-site-baseElementColor">
                 {title}
               </h3>
               <button

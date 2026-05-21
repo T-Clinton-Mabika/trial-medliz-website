@@ -3,7 +3,7 @@
  * - Scroll to top function to reset page position to top of page as user navigates from page to page
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -29,23 +29,21 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
   const [searchQuery, setSearchQuery] = useState("");
   const { isDark } = useDarkMode();
 
-  // Clear search when overlay closes
-  useEffect(() => {
-    if (!isOpen) {
-      setSearchQuery("");
-    }
-  }, [isOpen]);
+  const handleClose = useCallback(() => {
+    setSearchQuery("");
+    onClose();
+  }, [onClose]);
 
   // Handle escape key to close
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
-        onClose();
+        handleClose();
       }
     };
     window.addEventListener("keydown", handleEscape);
     return () => window.removeEventListener("keydown", handleEscape);
-  }, [isOpen, onClose]);
+  }, [isOpen, handleClose]);
 
   //application of filter feature. cs means course, ae means article, lb means labels (i.e. tags).
   const filterResults: SearchResult[] =
@@ -85,39 +83,35 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
         ]
       : [];
 
-  const handleResultClick = () => {
-    onClose();
-  };
-
   //setting colour variables for type section to be dependent on type and theme/mode.
-  const typeColourScheme = (type: string) => {
+  const typeColorScheme = (type: string) => {
     switch (type) {
       case "article":
         return {
-          typeText: isDark
+          typeBackground: isDark
             ? "bg-site-auxiliary-purple-shade"
             : "bg-site-auxiliary-purple-tint",
-          typeBackground: "text-site-blog",
+          typeText: "text-site-blog",
           typeBorder: isDark
             ? "border-site-auxiliary-purple-tint"
             : "border-site-auxiliary-purple-shade",
         };
       case "course":
         return {
-          typeText: isDark
+          typeBackground: isDark
             ? "bg-site-auxiliary-green-shade"
             : "bg-site-auxiliary-green-tint",
-          typeBackground: "text-site-courses",
+          typeText: "text-site-courses",
           typeBorder: isDark
             ? "border-site-auxiliary-green-tint"
             : "border-site-auxiliary-green-shade",
         };
       default:
         return {
-          typeText: isDark
+          typeBackground: isDark
             ? "bg-site-auxiliary-blue-shade"
             : "bg-site-auxiliary-blue-tint",
-          typeBackground: "text-site-general",
+          typeText: "text-site-general",
           typeBorder: isDark
             ? "border-site-auxiliary-blue-tint"
             : "border-site-auxiliary-blue-shade",
@@ -129,12 +123,12 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-20 px-4 pointer-events-auto">
+        <div className="fixed inset-0 z-100 flex items-start justify-center pt-20 px-4 pointer-events-auto">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
+            onClick={handleClose}
             className="absolute inset-0 bg-site-auxiliary-black/40 backdrop-blur-sm"
           />
           <motion.div
@@ -146,14 +140,14 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
             <div className="p-4 border-b border-site-borderOutline flex items-center gap-4">
               <input
                 autoFocus
-                className="flex-1 bg-transparent border-none outline-none text-lg"
+                className="flex-1 bg-transparent border-none outline-none text-lg text-site-baseElementColor placeholder:text-site-mutedElementColor"
                 type="text"
                 placeholder="Search articles and courses..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button
-                onClick={onClose}
+                onClick={handleClose}
                 className="p-2 rounded-full hover:bg-site-auxiliary-white dark:hover:bg-site-auxiliary-black transition-colors glow-border"
                 style={
                   {
@@ -163,7 +157,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
               >
                 <controlIcons.closeIcon
                   size={20}
-                  className="text-site-mutedText"
+                  className="text-site-mutedElementColor"
                 />
               </button>
             </div>
@@ -171,20 +165,20 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
               {filterResults.length > 0 ? (
                 <div className="space-y-2">
                   {filterResults.map((result, index) => {
-                    const typeStyles = typeColourScheme(result.type);
+                    const typeStyles = typeColorScheme(result.type);
                     return (
                       <Link
                         key={index}
                         to={result.link}
-                        onClick={handleResultClick}
+                        onClick={handleClose}
                         className="block p-3 rounded-xl hover:bg-site-hoverElement"
                       >
                         <div className="flex justify-between items-center">
-                          <span className="font-medium text-site-mainText">
+                          <span className="font-medium text-site-baseElementColor">
                             {result.title}
                           </span>
                           <span
-                            className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full border ${typeStyles.typeBackground} ${typeStyles.typeText} ${typeStyles.typeBorder}`}
+                            className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full border ${typeStyles.typeText} ${typeStyles.typeBackground} ${typeStyles.typeBorder}`}
                           >
                             {result.type}
                           </span>

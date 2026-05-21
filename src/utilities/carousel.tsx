@@ -59,10 +59,10 @@ export const Carousel = <T extends CarouselItem>({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`glow-border p-3 rounded-full bg-site-foreground border border-site-borderOutline text-site-mutedText transition-all shadow-md ${
+      className={`glow-border p-3 rounded-full bg-site-foreground border border-site-borderOutline text-site-mutedElementColor transition-all shadow-md ${
         disabled
           ? "opacity-30 cursor-not-allowed"
-          : "cursor-pointer hover:text-site-mainText"
+          : "cursor-pointer hover:text-site-baseElementColor"
       }`}
       style={{ "--glow-color": glowColor } as React.CSSProperties}
       aria-label={ariaLabel}
